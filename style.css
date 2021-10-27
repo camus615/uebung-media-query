@@ -11,14 +11,16 @@ body {
 }
 
 .wrapper {
-  height: 100%;
-  width: 80%;
-  margin: auto;
+  height: 100%; /*100% vom body*/
+  width: 80%; /*links und rechts sind 10% ürig*/
+  margin: auto; /*möglich auch: margin-left: 10% und margin-right: 10%*/
 }
 
 .card {
-  border: 1px black dotted;
+  border: 1px black dotted; /*border = Rahmen/Grenze / dotted = gepunktet, um jede Karte*/
   margin-top: 1rem;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .card img {
@@ -26,11 +28,43 @@ body {
   display: block;
 }
 
-.card h1 {
+.card h2 {
   background: #fff;
   padding: 5px;
+  font-size: 20px;
 }
 
-.row {
+.row /*reihe*/ {
   display: block;
+} /*Blockelement, das sich zeigt*/
+
+/*Media Query schreiben ab 960px ; body soll gelb werden ab 960px*/
+@media (min-width: 960px) and (max-width: 1399px) {
+  body {
+    background-color: yellow;
+  }
+  .card h2 {
+    font-size: 24px;
+  }
+  .row {
+    display: flex;
+  }
 }
+@media (mind-width: 1400px) {
+  .card h2 {
+    font-size: 32px;
+  }
+  .row {
+    display: block;
+  }
+}
+
+/*ab h2 font-size*/
+/*@ = bedeutet "wenn"*/
+
+.wrapper {
+  float: left;
+}
+
+/*ab 960px sollen Bilder nebeneinander stehen*/
+/*Abstand zwischen den Karten 16px, immer*/
